@@ -1,0 +1,17 @@
+body{
+    background-color: salmon;
+}
+h1{
+    font-family: 'Courgette', cursive;
+    text-align: center;
+    font-size: 80px;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#sales-page{
+    background-color: beige;
+}
