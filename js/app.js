@@ -110,11 +110,44 @@ function generateAllSales(store){
     store.totalCookies += cookies;
   }
 }
-generateAllSales(alki);
-generateAllSales(seaTac);
-generateAllSales(seattleCenter);
-generateAllSales(capitolHill);
-generateAllSales(firstPike);
 
+function appendData(store){
+  let container = document.getElementById('stores');
+  let heading = document.createElement('h2');
+  let headingText = document.createTextNode(store.location);
+  heading.appendChild(headingText);
+  container.appendChild(heading);
 
-console.log(alki,seattleCenter,seaTac,capitolHill,firstPike);
+  let salesData = document.createElement('ul');
+  container.appendChild(salesData);
+
+  for(var i = 0; i<store.cookiesPerHour.length; i++){
+    let listItem = document.createElement('li');
+    let listData = document.createTextNode(`${store.cookiesPerHour[i].time}: ${store.cookiesPerHour[i].sales}`);
+    listItem.appendChild(listData);
+    salesData.appendChild(listItem);
+  }
+  let totalSalesItem = document.createElement('li');
+  let totalSalesData = document.createTextNode(`Total: ${store.totalCookies}`);
+  totalSalesItem.appendChild(totalSalesData);
+  salesData.appendChild(totalSalesItem);
+}
+
+let allStoresArr = [firstPike, alki,seaTac,seattleCenter,capitolHill];
+
+function renderAll(arr){
+  for(var i = 0; i < arr.length; i++){
+    generateAllSales(arr[i]);
+    appendData(arr[i]);
+  }
+}
+renderAll(allStoresArr);
+// generateAllSales(alki);
+// generateAllSales(seaTac);
+// generateAllSales(seattleCenter);
+// generateAllSales(capitolHill);
+// generateAllSales(firstPike);
+
+// appendData(firstPike);
+
+// console.log(alki,seattleCenter,seaTac,capitolHill,firstPike);
