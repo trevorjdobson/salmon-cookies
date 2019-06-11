@@ -16,7 +16,7 @@ function Store(location, minCustomerPerHour,maxCustomerPerHour,avgCookiesPerCust
 }
 
 function generateRandom(min,max){
-  var num = Math.floor(Math.random() * (max - min + 1)) + min;
+  var num = Math.random() * (max - min + 1) + min;
 
   return num;
 }
