@@ -15,16 +15,11 @@ function Store(location, minCustomerPerHour,maxCustomerPerHour,avgCookiesPerCust
   appendData(this);
 }
 
-function generateRandom(min,max){
-  var num = Math.random() * (max - min + 1) + min;
-
-  return num;
-}
-
 function generateAllSales(store){
-  console.log(store);
+  let min = store.minCustomerPerHour;
+  let max = store.maxCustomerPerHour;
   for(var i = 0; i < store.cookiesPerHour.length; i++){
-    let cookies = Math.floor(generateRandom(store.minCustomerPerHour,store.maxCustomerPerHour) * store.avgCookiesPerCustomer);
+    let cookies = Math.floor((Math.random() * (max - min + 1) + min) * store.avgCookiesPerCustomer);
     store.cookiesPerHour[i].sales = cookies;
     store.totalCookies += cookies;
   }
