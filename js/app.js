@@ -53,9 +53,13 @@ function appendData(store){
 }
 
 //Create new stores
-var alki = new Store('Alki', 2, 16, 4.6);
-var seaTac = new Store('Seatac', 3, 24, 1.2);
-var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
-var seattleCenter = new Store('Seattle Center', 11, 24, 3.7);
-var firstPike = new Store('First & Pike',23, 65, 6.3);
+function renderAll(){
+  new Store('Alki', 2, 16, 4.6);
+  new Store('Seatac', 3, 24, 1.2);
+  new Store('Capitol Hill', 20, 38, 2.3);
+  new Store('Seattle Center', 11, 24, 3.7);
+  new Store('First & Pike',23, 65, 6.3);
+}
+
+renderAll();
 
