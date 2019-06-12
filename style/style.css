@@ -41,10 +41,14 @@ nav a{
 #about{
     text-align: center;
 }
-#table{
+table{
     margin-top: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    border-collapse: collapse;
 }
+table, th, td {
+    border: 1px solid black;
+  }
