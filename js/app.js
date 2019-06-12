@@ -58,16 +58,16 @@ function createTableHeader(){
   var table = document.getElementById('table');
   var header = document.createElement('thead');
   var headerRow = document.createElement('tr');
-  headerRow.appendChild(document.createElement('td').appendChild(document.createTextNode('Location')));
+  headerRow.appendChild(document.createElement('th').appendChild(document.createTextNode('Location')));
   for(var i = 0; i<hours.length;i++){
     var cell = document.createElement('th');
     cell.appendChild(document.createTextNode(hours[i]));
     headerRow.appendChild(cell);
   }
-  headerRow.appendChild(document.createElement('td').appendChild(document.createTextNode('Totals')));
+  headerRow.appendChild(document.createElement('th').appendChild(document.createTextNode('Totals')));
   header.appendChild(headerRow);
   table.appendChild(header);
-  table.setAttribute('border', '1');
+  
 }
 
 function createTableFooter(){
