@@ -21,7 +21,8 @@ function generateAllSales(store){
   let min = store.minCustomerPerHour;
   let max = store.maxCustomerPerHour;
   for(var i = 0; i < store.cookiesPerHour.length; i++){
-    let cookies = Math.floor((Math.random() * (max - min + 1) + min) * store.avgCookiesPerCustomer);
+    let random = (Math.random() * (max - min + 1) + min);
+    let cookies = Math.floor( random * store.avgCookiesPerCustomer);
     store.cookiesPerHour[i].sales = cookies;
     store.totalCookies += cookies;
     total += cookies;
@@ -85,6 +86,23 @@ function createTableFooter(){
   table.appendChild(footer);
 }
 
+function newStoreOnSubmit(e){
+  e.preventDefault();
+  let location = e.target.location.value;
+  let min = parseFloat(e.target.minCustomerPerHour.value);
+  let max = parseFloat(e.target.maxCustomerPerHour.value);
+  let avg = parseFloat(e.target.avgCookiesPerCustomer.value);
+  if(min > max || avg < 0){
+    alert('try again, your numbers don\'t make sense');
+    document.getElementById('new-store-form').reset();
+  }else{
+    new Store(location, min, max, avg);
+    document.getElementById('table').deleteTFoot();
+    createTableFooter();
+    document.getElementById('new-store-form').reset();
+  }
+}
+
 function renderAll(){
   new Store('Alki', 2, 16, 4.6);
   new Store('Seatac', 3, 24, 1.2);
@@ -97,5 +115,3 @@ function renderAll(){
 }
 
 renderAll();
-
-
