@@ -18,10 +18,15 @@ function Store(location, minCustomerPerHour,maxCustomerPerHour,avgCookiesPerCust
 }
 
 function generateAllSales(store){
+  
+  
   let min = store.minCustomerPerHour;
   let max = store.maxCustomerPerHour;
   for(var i = 0; i < store.cookiesPerHour.length; i++){
-    let cookies = Math.floor((Math.random() * (max - min + 1) + min) * store.avgCookiesPerCustomer);
+    console.log('min and max', min, max);
+    let random = (Math.random() * (max - min + 1) + min);
+    console.log('random',random);
+    let cookies = Math.floor( random * store.avgCookiesPerCustomer);
     store.cookiesPerHour[i].sales = cookies;
     store.totalCookies += cookies;
     total += cookies;
@@ -31,6 +36,7 @@ function generateAllSales(store){
       totalsPerHour[i] += cookies;
     }
   }
+  console.log(store);
 }
 
 function appendData(store){
@@ -99,3 +105,14 @@ function renderAll(){
 renderAll();
 
 
+
+function newStoreOnSubmit(){
+  event.preventDefault();
+  let location = event.target.location.value;
+  let min = parseFloat(event.target.minCustomerPerHour.value);
+  let max = parseFloat(event.target.maxCustomerPerHour.value);
+  let avg = parseFloat(event.target.avgCookiesPerCustomer.value);
+  new Store(location, min, max, avg);
+  document.getElementById('table').deleteTFoot();
+  createTableFooter();
+}
