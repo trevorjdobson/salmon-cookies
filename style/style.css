@@ -1,26 +1,7 @@
 body{
     background-color: salmon;
 }
-h1{
-    font-family: 'Courgette', cursive;
-    text-align: center;
-    font-size: 80px;
-}
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-#sales-page{
-    background-color: beige;
-}
-#content{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
+
 nav{
     top: 0;
     left: 0;
@@ -37,21 +18,4 @@ nav a{
     padding: 14px;
     text-decoration: none;
     
-}
-#about{
-    text-align: center;
-}
-table{
-    margin-top: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    border-collapse: collapse;
-}
-table, th, td {
-    border: 1px solid black;
-  }
-#new-store-form{
-    margin-top: 100px;
 }
