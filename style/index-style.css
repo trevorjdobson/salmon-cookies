@@ -1,0 +1,36 @@
+h1{
+    font-family: 'Courgette', cursive;
+    text-align: center;
+    font-size: 80px;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#content{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+#about{
+    text-align: center;
+}
+#locations > ul > li{
+    width: 200px;
+    float: left;
+    margin-bottom: 30px;
+}
+#locations > ul > li:nth-child(3n+2){
+    margin: 0 30px;
+}
+#locations > ul{
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+#locations > h2{
+    text-align: center;
+}
