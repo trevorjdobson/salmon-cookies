@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 
 let allStoresArr = [];
@@ -68,7 +69,6 @@ function createTableHeader(){
   headerRow.appendChild(document.createElement('th').appendChild(document.createTextNode('Totals')));
   header.appendChild(headerRow);
   table.appendChild(header);
-  
 }
 
 function createTableFooter(){
